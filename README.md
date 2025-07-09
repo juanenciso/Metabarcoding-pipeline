@@ -1,4 +1,5 @@
 **Pipeline for 16S metabarcoding assembly**
+
 **QIIME2 activation in Linux through conda-environment**
 conda activate qiime2-amplicon-2023.9
 **Importing data**                                 
