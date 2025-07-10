@@ -104,7 +104,7 @@ qiime tools export --input-path taxonomy-dn-97.qza --output-path exported-taxono
 biom convert -i feature-table.biom -o feature-table.txt --to-tsv
 ```
 
-📊 RStudio Analysis
+# 📊 RStudio Analysis 
 
 ##  Step 10: Install R Packages
 
