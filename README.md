@@ -4,7 +4,7 @@ This pipeline performs 16S rRNA metabarcoding data analysis using QIIME2 and RSt
 
 ---
 
-##  QIIME2
+##  🔬 QIIME2 🔬
 
 ##  Step 1: Activate QIIME2 in conda environment
 
@@ -104,7 +104,7 @@ qiime tools export --input-path taxonomy-dn-97.qza --output-path exported-taxono
 biom convert -i feature-table.biom -o feature-table.txt --to-tsv
 ```
 
-# 📊 RStudio Analysis 
+# 📊 RStudio Analysis 📊
 
 ##  Step 10: Install R Packages
 
