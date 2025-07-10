@@ -106,14 +106,14 @@ biom convert -i feature-table.biom -o feature-table.txt --to-tsv
 
 📊 RStudio Analysis
 
-##  Install R Packages
+##  Step 10: Install R Packages
 
 ```
 install.packages(c("vegan", "phyloseq", "tidyverse", "patchwork",
                    "agricolae", "FSA", "rcompanion", "ggplot2", "viridis"))
 ```
 
-##  Load and Prepare Data
+##  Step 11: Load and Prepare Data
 
 ```
 library(phyloseq)
@@ -127,7 +127,7 @@ TAX <- tax_table(as.matrix(data_taxo))
 data_phylo <- phyloseq(OTU, TAX, SAM)
 ```
 
-##  Filter Taxa
+##  Step 12: Filter Taxa
 
 ```
 data_phylo_filtered <- subset_taxa(
@@ -159,7 +159,7 @@ geom_point()
 P1 | P2 | P3 | P4
 ```
 
-##  Alpha Diversity
+##  Step 13: Alpha Diversity
 
 ```
 data_otu_filtered <- as.data.frame(otu_table(data_phylo_filtered))
@@ -183,7 +183,7 @@ hsd_test <- TukeyHSD(aov_test_richness)
 hsd_res <- HSD.test(aov_test_richness, "locality", group=T)$groups
 ```
 
-##  Beta Diversity
+##  Step 14: Beta Diversity
 
 ```
 data_phylo_filt <- filter_taxa(data_phylo, function(x) sum(x > 2) > (0.15 * length(x)), TRUE)
@@ -203,13 +203,13 @@ ggplot(ordination_data, aes(x = Axis.1, y = Axis.2, color = locality)) +
   theme_minimal()
 ```
 
-##  PERMANOVA
+##  Step 15: PERMANOVA
 
 ```
 adonis2(as.data.frame(otu_table(data_phylo_filt_rar)) ~ locality, data = data_grp, permutations = 9999, method = "bray")
 ```
 
-##  Gamma Diversity
+##  Step 16: Gamma Diversity
 
 ```
 Tab <- read_tsv("OTU_table.txt", col_types = cols(otu_id = col_character(), .default = col_number()))
